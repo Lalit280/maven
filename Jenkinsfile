@@ -8,12 +8,12 @@ pipeline {
 		stage("Script") {
 			steps {
 				git branch: 'feature', url: 'https://github.com/Lalit280/maven.git'
-				sh "sh shellscript.sh"
+				sh "bash shellscript.sh"
 			}
 		}
 		stage("Maven Build") {
 			steps {
-				git branch: 'main', url: "https://github.com/udiscopotato/my-app.git"
+				git branch: 'main', url: 'https://github.com/Lalit280/maven.git'
 				sh "mvn clean install"
 			}
 		}
